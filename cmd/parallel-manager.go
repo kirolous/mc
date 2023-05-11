@@ -127,7 +127,6 @@ func (p *ParallelManager) monitorProgress() {
 		ticker := time.NewTicker(monitorPeriod)
 		defer ticker.Stop()
 
-		var prevSentBytes int64
 
 		for {
 			select {
