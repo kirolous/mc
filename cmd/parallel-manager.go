@@ -127,8 +127,7 @@ func (p *ParallelManager) monitorProgress() {
 		ticker := time.NewTicker(monitorPeriod)
 		defer ticker.Stop()
 
-		var prevSentBytes, maxBandwidth int64
-		var retry int
+		var prevSentBytes
 
 		for {
 			select {
@@ -138,7 +137,6 @@ func (p *ParallelManager) monitorProgress() {
 			case <-ticker.C:
 				// Compute new bandwidth from counted sent bytes
 				sentBytes := atomic.LoadInt64(&p.sentBytes)
-				bandwidth := sentBytes - prevSentBytes
 				prevSentBytes = sentBytes
 
 				for i := 0; i < defaultWorkerFactor; i++ {
