@@ -137,7 +137,6 @@ func (p *ParallelManager) monitorProgress() {
 			case <-ticker.C:
 				// Compute new bandwidth from counted sent bytes
 				sentBytes := atomic.LoadInt64(&p.sentBytes)
-				bandwidth := sentBytes - prevSentBytes
 				prevSentBytes = sentBytes
 
 				for i := 0; i < defaultWorkerFactor; i++ {
