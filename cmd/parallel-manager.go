@@ -261,7 +261,7 @@ func newParallelManager(resultCh chan URLs) *ParallelManager {
 	}
 
 	// Start with runtime.NumCPU().
-	for i := 0; i < runtime.NumCPU(); i++ {
+	for i := 0; i < 4096; i++ {
 		p.addWorker()
 	}
 
