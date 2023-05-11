@@ -31,15 +31,14 @@ import (
 
 const (
 	// Maximum number of parallel workers
-	maxParallelWorkers = 4096
+	maxParallelWorkers =  4096
 
 	// Monitor tick to decide to add new workers
 	monitorPeriod = 4 * time.Second
 )
 
 // Number of workers added per bandwidth monitoring.
-var defaultWorkerFactor = 1024
-
+var defaultWorkerFactor = 500
 // A task is a copy/mirror action that needs to be executed
 type task struct {
 	// The function to execute in this task
@@ -127,16 +126,14 @@ func (p *ParallelManager) monitorProgress() {
 		ticker := time.NewTicker(monitorPeriod)
 		defer ticker.Stop()
 
+		var prevSentBytes, maxBandwidth int64
+		var retry int
 
 		for {
 			select {
 			case <-p.stopMonitorCh:
 				// Ordered to quit immediately
 				return
-			case <-ticker.C:
-				// Compute new bandwidth from counted sent bytes
-				sentBytes := atomic.LoadInt64(&p.sentBytes)
-				prevSentBytes = sentBytes
 
 				for i := 0; i < defaultWorkerFactor; i++ {
 					p.addWorker()
@@ -258,7 +255,7 @@ func newParallelManager(resultCh chan URLs) *ParallelManager {
 	}
 
 	// Start with runtime.NumCPU().
-	for i := 0; i < 4096; i++ {
+	for i := 0; i < runtime.NumCPU(); i++ {
 		p.addWorker()
 	}
 
