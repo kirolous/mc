@@ -22,8 +22,8 @@ import (
 
 	"github.com/minio/cli"
 	json "github.com/minio/colorjson"
-	"github.com/minio/mc/cmd/ilm"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/cmd/ilm"
+	"github.com/kirolous/mc/pkg/probe"
 	minio "github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/lifecycle"
 	"github.com/minio/pkg/console"

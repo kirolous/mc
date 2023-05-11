@@ -21,7 +21,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	. "gopkg.in/check.v1"
 )
 

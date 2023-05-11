@@ -33,7 +33,7 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/google/shlex"
 	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/console"
 
 	// golang does not support flat keys for path matching, find does

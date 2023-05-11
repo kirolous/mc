@@ -32,7 +32,7 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/minio/cli"
 	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/console"
 )
 

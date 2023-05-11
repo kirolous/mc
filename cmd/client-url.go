@@ -26,7 +26,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/mimedb"
 )
 

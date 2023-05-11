@@ -22,7 +22,7 @@ import (
 	"fmt"
 
 	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 )
 
 var batchDescribeCmd = cli.Command{

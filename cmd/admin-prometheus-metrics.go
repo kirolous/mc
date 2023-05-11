@@ -24,7 +24,7 @@ import (
 
 	"github.com/minio/cli"
 	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/prom2json"
 )

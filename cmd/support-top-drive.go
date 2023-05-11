@@ -24,7 +24,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/minio/cli"
 	"github.com/minio/madmin-go/v2"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 )
 
 var supportTopDriveFlags = []cli.Flag{

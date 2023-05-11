@@ -36,7 +36,7 @@ import (
 	"github.com/cheggaaa/pb"
 	"github.com/inconshreveable/mousetrap"
 	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/minio-go/v7/pkg/set"
 	"github.com/minio/pkg/console"
 	"github.com/minio/pkg/env"

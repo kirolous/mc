@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 
 	"github.com/minio/cli"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/console"
 )
 

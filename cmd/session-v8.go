@@ -29,7 +29,7 @@ import (
 	"time"
 
 	json "github.com/minio/colorjson"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/console"
 	"github.com/minio/pkg/quick"
 )

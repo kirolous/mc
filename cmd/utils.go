@@ -40,7 +40,7 @@ import (
 	"github.com/minio/minio-go/v7/pkg/encrypt"
 
 	jwtgo "github.com/golang-jwt/jwt/v4"
-	"github.com/minio/mc/pkg/probe"
+	"github.com/kirolous/mc/pkg/probe"
 	"github.com/minio/pkg/console"
 )
 

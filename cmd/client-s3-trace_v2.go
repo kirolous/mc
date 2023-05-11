@@ -22,7 +22,7 @@ import (
 	"net/http/httputil"
 	"strings"
 
-	"github.com/minio/mc/pkg/httptracer"
+	"github.com/kirolous/mc/pkg/httptracer"
 	"github.com/minio/pkg/console"
 )
 
