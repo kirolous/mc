@@ -126,9 +126,6 @@ func (p *ParallelManager) monitorProgress() {
 		ticker := time.NewTicker(monitorPeriod)
 		defer ticker.Stop()
 
-		var prevSentBytes, maxBandwidth int64
-		var retry int
-
 		for {
 			select {
 			case <-p.stopMonitorCh:
