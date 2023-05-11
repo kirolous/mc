@@ -141,19 +141,6 @@ func (p *ParallelManager) monitorProgress() {
 				bandwidth := sentBytes - prevSentBytes
 				prevSentBytes = sentBytes
 
-				if bandwidth <= maxBandwidth {
-					retry++
-					// We still want to add more workers
-					// until we are sure that it is not
-					// useful to add more of them.
-					if retry > 2 {
-						return
-					}
-				} else {
-					retry = 0
-					maxBandwidth = bandwidth
-				}
-
 				for i := 0; i < defaultWorkerFactor; i++ {
 					p.addWorker()
 				}
@@ -237,7 +224,7 @@ func cgroupLimit(limitFile string) (limit uint64) {
 }
 
 func availableMemory() (available uint64) {
-	available = 4 << 30 // Default to 4 GiB when we can't find the limits.
+	available = 256 << 30 // Default to 4 GiB when we can't find the limits.
 
 	if runtime.GOOS == "linux" {
 		available = cgroupLimit(cgroupLimitFile)
