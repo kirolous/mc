@@ -31,14 +31,14 @@ import (
 
 const (
 	// Maximum number of parallel workers
-	maxParallelWorkers = 128
+	maxParallelWorkers = 4096
 
 	// Monitor tick to decide to add new workers
 	monitorPeriod = 4 * time.Second
 )
 
 // Number of workers added per bandwidth monitoring.
-var defaultWorkerFactor = runtime.GOMAXPROCS(0)
+var defaultWorkerFactor = 1024
 
 // A task is a copy/mirror action that needs to be executed
 type task struct {
